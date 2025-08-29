@@ -3,7 +3,7 @@ import axios from 'axios'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from '../authProvider'
+import { AuthContext } from '../AuthProvider'
 
 export const Login = () => {
 
@@ -32,7 +32,7 @@ export const Login = () => {
       localStorage.setItem('refreshToken', response.data.refresh)
       console.log("Login Successful")
       setIsLoggedIn(true)
-      navigate('/ ')
+      navigate('/dashboard')
     } catch (error) {
       console.log("Invalid User")
       setError('Invalid Credentials')
